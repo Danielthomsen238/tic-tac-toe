@@ -71,29 +71,17 @@ function aI_choise() {
   }
 }
 function insane_ai() {
+   
     for (index = 0; index <= 7; index++) {
         let strategi = winningConditions[index]
         let strategi_1 = document.getElementById(`box${strategi[0]}`)
         let strategi_2 = document.getElementById(`box${strategi[1]}`)
         let strategi_3 = document.getElementById(`box${strategi[2]}`)
+        
         if((strategi_1.innerHTML == "O" && strategi_2.innerHTML == "O") || (strategi_2.innerHTML == "O" && strategi_3.innerHTML == "O") || (strategi_1.innerHTML == "O" && strategi_3.innerHTML == "O"))
         { 
             for (i = 0; i < 3; i++) {
-                console.log("insane mode Win:" + strategi)
-               let pick = document.getElementById(`box${strategi[i]}`)
-               console.log("choise :" + strategi[i])
-                if(pick.innerHTML == "") {
-                    pick.innerHTML = "O"
-                    return
-                }
-            }
-        }
-        
-        
-        if((strategi_1.innerHTML == "X" && strategi_2.innerHTML == "X") || (strategi_2.innerHTML == "X" && strategi_3.innerHTML == "X") || (strategi_1.innerHTML == "X" && strategi_3.innerHTML == "X"))
-        { 
-            for (i = 0; i < 3; i++) {
-                console.log("insane mode Block:" + strategi)
+                console.log("insane mode win:" + strategi)
                let pick = document.getElementById(`box${strategi[i]}`)
                console.log("choise :" + strategi[i])
                 if(pick.innerHTML == "") {
@@ -103,6 +91,26 @@ function insane_ai() {
             }
         }
         }
+        
+        for (index = 0; index <= 7; index++) {
+            let strategi = winningConditions[index]
+            let strategi_1 = document.getElementById(`box${strategi[0]}`)
+            let strategi_2 = document.getElementById(`box${strategi[1]}`)
+            let strategi_3 = document.getElementById(`box${strategi[2]}`)
+        
+            if((strategi_1.innerHTML == "X" && strategi_2.innerHTML == "X") || (strategi_2.innerHTML == "X" && strategi_3.innerHTML == "X") || (strategi_1.innerHTML == "X" && strategi_3.innerHTML == "X"))
+            { 
+                for (i = 0; i < 3; i++) {
+                    console.log("insane mode Block:" + strategi)
+                   let pick = document.getElementById(`box${strategi[i]}`)
+                   console.log("choise :" + strategi[i])
+                    if(pick.innerHTML == "") {
+                        pick.innerHTML = "O"
+                        return
+                    }
+                }
+            }
+            }
             aI_choise()
             ai.innerHTML = "O"
             
