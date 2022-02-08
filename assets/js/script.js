@@ -26,7 +26,7 @@ box.forEach(item => {
             turn++
             CheckWinCondition()
             if(roundWon == false && turn < 9) {
-            setTimeout(insane_ai, 250)
+            setTimeout(insane_ai, 500)
             player = "X" 
             turn++
             CheckWinCondition()
