@@ -1,0 +1,11 @@
+@import './variables';
+
+
+main {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "box0 box1 box2"
+    "box3 box4 box5"
+    "box6 box7 box8";
+}

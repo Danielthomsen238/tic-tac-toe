@@ -1,0 +1,39 @@
+* {
+margin: 0;
+padding: 0;
+text-decoration: none;
+list-style: none;
+}
+@import './helper/variables';
+@import './helper/mixin';
+@import './helper/placeholder';
+@import './helper/extend';
+@import './helper/grid';
+@import './helper/nav';
+@import './helper/footer';
+@import './helper/animation';
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&display=swap');
+
+body {
+    text-align: center;
+    color: white;
+    background-color: black;
+    max-width: 1920px;
+    main {
+        font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+        margin: auto auto;
+        margin-top: 200px;
+        width: 600px;
+        height: 600px;
+        div {
+            font-size: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            border: white solid 5px;
+        }
+    }
+}
