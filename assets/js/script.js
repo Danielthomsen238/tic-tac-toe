@@ -108,7 +108,3 @@ function insane_ai() {
     }
 
 
-    let fruits = [1, 2, 3, 4, 5]
-    fruits.splice(2,3)
-    
-    console.log(fruits)
