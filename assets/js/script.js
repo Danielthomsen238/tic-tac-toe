@@ -79,7 +79,7 @@ function insane_ai() {
         if((strategi_1.innerHTML == "O" && strategi_2.innerHTML == "O") || (strategi_2.innerHTML == "O" && strategi_3.innerHTML == "O") || (strategi_1.innerHTML == "O" && strategi_3.innerHTML == "O"))
         { 
             for (i = 0; i < 3; i++) {
-                console.log("insane mode :" + strategi)
+                console.log("insane mode Win:" + strategi)
                let pick = document.getElementById(`box${strategi[i]}`)
                console.log("choise :" + strategi[i])
                 if(pick.innerHTML == "") {
@@ -93,7 +93,7 @@ function insane_ai() {
         if((strategi_1.innerHTML == "X" && strategi_2.innerHTML == "X") || (strategi_2.innerHTML == "X" && strategi_3.innerHTML == "X") || (strategi_1.innerHTML == "X" && strategi_3.innerHTML == "X"))
         { 
             for (i = 0; i < 3; i++) {
-                console.log("insane mode :" + strategi)
+                console.log("insane mode Block:" + strategi)
                let pick = document.getElementById(`box${strategi[i]}`)
                console.log("choise :" + strategi[i])
                 if(pick.innerHTML == "") {
@@ -105,6 +105,7 @@ function insane_ai() {
         }
             aI_choise()
             ai.innerHTML = "O"
+            
     }
-
+setInterval(CheckWinCondition, 10)
 
