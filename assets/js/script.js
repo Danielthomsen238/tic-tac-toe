@@ -2,6 +2,7 @@
 
 let player = "X";
 let turn = 0
+let checkforfirstblock = 0;
 let pick = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 let ai;
 let message = document.getElementById('h1')
@@ -17,7 +18,7 @@ const winningConditions = [
     [0, 4, 8],
     [2, 4, 6],
   ];
-
+const firstblock = [0, 2, 6, 8]
 box.forEach(item => {
     item.addEventListener('click', function () {
         if (player == "X" && (item.innerHTML != "X" && item.innerHTML != "O") && roundWon == false) {
@@ -65,7 +66,6 @@ return items[Math.floor(Math.random()*items.length)];
 }
 function aI_choise() {
   ai = document.getElementById(`box${aI(pick)}`)
-  console.log(ai)
   if (ai.innerHTML == "X" || ai.innerHTML == "O" ) {
       aI_choise()
   }
@@ -75,10 +75,20 @@ function insane_ai() {
     if(firstChoise.innerHTML == ""){
         firstChoise.innerHTML = "O"
     }else {
-        if (firstChoise == "X")
+        if (firstChoise.innerHTML == "X" && checkforfirstblock == 0)
         {
-            
-        }
+            for (i= 0; i < firstblock.length; i++) {
+                let strategi = document.getElementById(`box${aI(firstblock)}`)
+                console.log(strategi.innerHTML + " first block")
+                if (strategi.innerHTML == "") {
+                    strategi.innerHTML = "O";
+                    checkforfirstblock = 1;
+                    break;
+                }
+            }
+        } else {
+
+        
         for (index = 0; index <= 7; index++) {
             let strategi = winningConditions[index]
             let strategi_1 = document.getElementById(`box${strategi[0]}`)
@@ -120,9 +130,8 @@ function insane_ai() {
                 }
                 aI_choise()
                 ai.innerHTML = "O"
-                
+            }           
     }
-   
     }
 setInterval(CheckWinCondition, 10)
 
